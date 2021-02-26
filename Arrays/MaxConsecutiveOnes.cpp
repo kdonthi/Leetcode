@@ -3,27 +3,18 @@ class Solution {
 public:
     int findMaxConsecutiveOnes(vector<int>& nums) {
         int maxOneLen = 0;
-        int currOneLen = 0;
+        int windBeg = 0;
+        int windEnd = 0;
         int numsSize = nums.size();
-        int i;
-        for (i = 0; i < numsSize; i++)
+        for (int i = 0; i < numsSize; i++)
         {
-            if (nums[i] == 1) {
-                currOneLen += 1;
+            if (nums[i] == 1)
+                windEnd++;
+            if (nums[i] == 0 || i == numsSize - 1) {
+                maxOneLen = ((windEnd - windBeg) > maxOneLen ? (windEnd - windBeg) : maxOneLen);
+                windBeg = windEnd;
             }
-            else if (nums[i] == 0) {
-                if (currOneLen > maxOneLen) {
-                    maxOneLen = currOneLen;
-                }
-                currOneLen = 0; //make sure to reset to 0, even if you don't get higher cons. 1's
-            }
-            else {
-                return (-1);
-            }
-        }
-        if (currOneLen > maxOneLen) {
-            maxOneLen = currOneLen;
-        }
+        }   
         return (maxOneLen);
     }
 };
