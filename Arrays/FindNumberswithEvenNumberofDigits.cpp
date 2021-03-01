@@ -17,3 +17,6 @@ public:
         return (evenNums);
     }
 };
+
+//The time complexity is at most 5 times the number of numbers + 1 (iterating through all the numbers), or O(6*N) which is just O(N)
+//The space complexity is N + 2 (+ N?) or just O(N)
