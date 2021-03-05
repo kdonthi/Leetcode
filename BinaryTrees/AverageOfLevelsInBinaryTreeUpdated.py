@@ -18,3 +18,6 @@ class Solution:
             avg /= len(listOfNodes[i])
             listOfNodes[i] = avg
         return (listOfNodes)
+
+# Time Complexity is O(2N) or O(N) because we go through each node twice, once to get their values and once to get their averages
+# Space Complexity is the size of the subtree of each node * the number of nodes which is O(N^2)
