@@ -25,3 +25,5 @@ class Solution:
         for i,j in zip(self.totalList, self.numInLevel):
             avgList.append(i / j)
         return (avgList)
+#Time Complexity is O(n) because we go through each value once to add its value to totalList
+#Space Complexity is (O(N + log(n) + log(n)))
